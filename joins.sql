@@ -107,3 +107,11 @@ comments.body AS comment_body
 FROM comments INNER JOIN posts ON post_id = posts.id
 INNER JOIN users ON posts.user_id = users.id
 WHERE comments.body ~ 'SSL' OR comments.body ~ 'firewall' AND posts.content ~ 'nemo';
+
+SELECT COUNT (*)
+FROM comments INNER JOIN posts ON post_id = posts.id
+WHERE posts.created_at > date '2015-07-14'; 
+
+SELECT COUNT (*)
+FROM users INNER JOIN comments ON comments.user_id = users.id
+WHERE comments.body ~ 'programming';
